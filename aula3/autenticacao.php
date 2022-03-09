@@ -1,10 +1,12 @@
 <?php
 
 $auth = $_GET;
-
 $senha = $auth['senha'];
 
-$qtde_caracteres = strlen($senha);
+
+
+
+// $qtde_caracteres = strlen($senha);
 
 // if ($qtde_caracteres > 10) {
 //     echo 'Senha não pode conter mais do que 10 caracteres';
