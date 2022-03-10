@@ -7,6 +7,7 @@ $file = $_FILES['upload'];
 $type = $file['type'];
 $nome_arquivo = $file['name'];
 
+$file_name = date('d-m-Y-h-i-s-') . $nome_arquivo ;
 /*
 $bodytag = str_replace("jpeg", "gif", $type);
 echo $type;
@@ -21,16 +22,20 @@ if ($pos === false) {
     die; 
 }
 
-// $fragmentacao = explode('/',$type);
-// if(!in_array('jpeg',$fragmentacao)) {
-//     echo 'Só aceitamos arquivos JPEG';
-//     die;
-// }
+$fragmentacao = explode('/',$type);
+if(!in_array('jpeg',$fragmentacao)) {
+    echo 'Só aceitamos arquivos JPEG';
+    die;
+}
 
-$result = move_uploaded_file($file['tmp_name'], __DIR__ . "/files/$nome_arquivo" );
+
+$extensao = $fragmentacao[1];
+
+$result = move_uploaded_file($file['tmp_name'], __DIR__ . "/files/imagem.$extensao" );
 
 if ($result) {
     echo 'arquivo movido com sucesso.';
+    header('Location: form.html');
 } else {
     echo 'Arquivo não pode ser transferido';
 }
