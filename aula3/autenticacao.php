@@ -3,9 +3,6 @@
 $auth = $_GET;
 $senha = $auth['senha'];
 
-
-
-
 // $qtde_caracteres = strlen($senha);
 
 // if ($qtde_caracteres > 10) {
@@ -29,24 +26,31 @@ $senha = $auth['senha'];
 //     }
 // }
 
-
-
-
-
-//echo $senha;
-die;
-
-
-
 if(isset($auth['senha'])) {
-    echo 'Senha existe';
+    //echo 'Senha existe';
 }
 echo '<br>';
 if(isset($auth['email'])) {
-    echo 'Email existe';
+    //echo 'Email existe';
 }
 
-header('Location: form.html?login=ok');
+$email = $_GET['email'];
+$test = stripos($email, '@');
+$mensagem = 'ok';
+if($test === false) {
+    $mensagem = 'erro';
+}
+
+ // (?:) Operador Ternario
+
+$test_ternario = $mensagem === 'ok' ? 'Email Valido' : 'Email invalido';
+echo $test_ternario;
+
+// echo $auth = $_GET['email'];
+//header('Location: form.php?login=' . $mensagem);
+
+
+//header('Location: form.php?login=ok');
 
 // echo '<pre>';
 // print_r($_GET);

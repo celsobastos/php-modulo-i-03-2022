@@ -16,18 +16,15 @@ echo $bodytag;
 die;*/
 
 
-$pos = strrpos($type , "jpeg");
-if ($pos === false) {
-    echo 'Ops, só aceitamos arquivos JPEG';
-    die; 
-}
+include "functions.php";
 
 $fragmentacao = explode('/',$type);
 if(!in_array('jpeg',$fragmentacao)) {
     echo 'Só aceitamos arquivos JPEG';
     die;
 }
-
+// isset(); exist
+// empty(); está vazia
 
 $extensao = $fragmentacao[1];
 
