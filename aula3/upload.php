@@ -1,5 +1,5 @@
 <?php
-
+include "functions.php";
 // echo '<pre>';
 // print_r($_FILES);
 
@@ -16,9 +16,13 @@ echo $bodytag;
 die;*/
 
 
-include "functions.php";
+if(!validaTipoDeArquivo('jpeg')){
+    echo 'Ops! Só aceitamos arquivos JPEG';
+    die;  
+}
 
 $fragmentacao = explode('/',$type);
+
 if(!in_array('jpeg',$fragmentacao)) {
     echo 'Só aceitamos arquivos JPEG';
     die;
