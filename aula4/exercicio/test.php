@@ -29,17 +29,15 @@
 <body>
     <!--  -->
     <h1>Sorteio</h1>
-    <a href="sorteio.php">Clique para sortear um numero.</a>
+    <a href="sorteio.php?update=true">Clique para sortear um numero.</a>
     <div class='container'>
         <div class="test">
-            2
+            <?php echo $_GET['numero'] ?>
         </div>
         <div class="test">
-            <!-- 
-                Se o numero soreteado for 5
-                uma imagem aparece aqui.
-            -->
-            Imagem aqui ...
+            <?php if($_GET['numero'] == 5) { ?>
+                <img src="bird.png" width="100%">
+            <?php } ?>
         </div>
     <div>
 </body>
