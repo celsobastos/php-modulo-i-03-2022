@@ -6,21 +6,41 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Exercicios</title>
     <style>
-        .test { 
-            font-size: 50px; 
+        .container {
+            display: flex;
+            margin: auto;
             border: 1px solid black;
-            width: 100px;
-            height: 100px;
-            padding: 20px 0 0 20px;
+            align-items: center;
+            justify-content: space-evenly;
+            flex-wrap: nowrap;
+        }
+        .test { 
+            font-size: 30px; 
+            width: 30%;
+            height: 150px;
+            border: 1px solid black;
+            padding: 20px 0 0 35px;
+        }
+        a{
+            display: block;
         }
     </style>
 </head>
 <body>
     <!--  -->
     <h1>Sorteio</h1>
-    <div class="test">
-        2
-    </div>
     <a href="sorteio.php">Clique para sortear um numero.</a>
+    <div class='container'>
+        <div class="test">
+            2
+        </div>
+        <div class="test">
+            <!-- 
+                Se o numero soreteado for 5
+                uma imagem aparece aqui.
+            -->
+            Imagem aqui ...
+        </div>
+    <div>
 </body>
 </html>
